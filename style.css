@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Ruhl medium;
+  src: url(/html_css/elena_joy/fonts/FrankRuhlLibre-Medium.ttf);
+}
+@font-face {
+  font-family: Ruhl regular;
+  src: url(/html_css/elena_joy/fonts/FrankRuhlLibre-Regular.ttf);
+}
+@font-face {
+  font-family: vibes;
+  src: url(C:\Users\Onasanya\Desktop\astro\html_css\elena_joy\fonts\FrankRuhlLibre-Medium.ttf);
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+html {
+  font-size: 62.5%;
+  --header1: calc(2rem + 1vw);
+  --header2: calc(3.5rem + 1vw);
+  --header3: calc(3rem + 1vw);
+  --header4: calc(2.4rem + 1vw);
+  --text: calc(1.5rem + 1vw);
+  --big: calc(2.4rem + 1vw);
+  --special-color: #906272;
+  --background-color: #414141;
+  --grey-text: #525252;
+  scroll-behavior: smooth;
+}
+body {
+  animation: opening 1s ease-in-out;
+  width: 100%;
+  font-family: "Frank Ruhl Libre", serif;
+}
+header {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  position: relative;
+}
+nav {
+  min-height: 10vh;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.logo {
+  flex: 2 1 40rem;
+  font-size: var(--header1);
+  font-family: "Great Vibes", cursive;
+}
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1 1 40rem;
+  font-size: 2rem;
+}
+
+.nav-links li {
+  margin: 1rem 2rem;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 90vh;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+.hero-intro h2 {
+  font-size: var(--header2);
+  padding: 3rem 3rem;
+}
+.hero-intro p {
+  font-size: var(--text);
+  padding: 2rem 5rem;
+  margin: 3rem;
+}
+.hero-intro {
+  flex: 2 1 20rem;
+  text-align: center;
+}
+.hero-intro button {
+  padding: 2rem 5rem;
+  border: 3px solid;
+  margin: 2rem;
+  font-size: 2rem;
+  color: var(--special-color);
+  cursor: pointer;
+  font-family: "Frank Ruhl Libre", serif;
+}
+.hero-intro button a {
+  text-decoration: none;
+}
+.hero-image {
+  flex: 1 1 20rem;
+  background: linear-gradient(#dad8dd, #dad1d4);
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-elena {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plant {
+  position: absolute;
+  bottom: 0;
+  left: -20%;
+  z-index: -1;
+  width: 80%;
+  height: 80%;
+  animation: plant 2s ease-in-out alternate,
+    shake 2s ease-in-out infinite alternate-reverse;
+  transform-origin: bottom;
+}
+.plant2 {
+  left: 40%;
+}
+/* animations*/
+@keyframes plant {
+  from {
+    transform: translate(5%, 5%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes opening {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  from {
+    transform: rotateZ(15deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+/* ABOUT PAGE*/
+
+.about-page {
+  min-height: 100vh;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.minimal {
+  flex: 1 1 30rem;
+  position: relative;
+}
+.minimal h2 {
+  position: absolute;
+  font-size: var(--header2);
+  letter-spacing: 1rem;
+  left: 25%;
+  top: 5%;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.about-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex: 2 1 30rem;
+  background-color: var(--background-color);
+}
+.about-text h2 {
+  font-size: var(--header2);
+  margin: 1rem;
+  padding: 1rem;
+}
+.about-text p {
+  font-size: var(--text);
+  margin: 1rem;
+  padding: 1rem;
+}
+/* GALERRY*/
+.gallery {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.gallery img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.gallery-1 {
+  grid-column: 1/3;
+}
+.gallery-2 {
+  grid-row: 1/3;
+  grid-column: 3/4;
+}
+.gallery-text {
+  position: absolute;
+  background-color: var(--special-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  text-align: center;
+}
+
+.gallery-text h2 {
+  font-size: var(--header2);
+  text-align: center;
+
+  margin: 1rem;
+}
+.gallery-text p {
+  font-size: var(--text);
+}
+
+/*contact page*/
+.contact {
+  min-height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.contact-text {
+  flex: 1 1 30rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.contact-text h2 {
+  font-size: var(--header2);
+  padding: 1rem;
+  margin: 3rem;
+}
+
+.contact-text span {
+  font-size: 7rem;
+  color: var(--special-color);
+}
+.contact-text button {
+  padding: auto;
+  width: 30rem;
+  height: 5rem;
+  margin: 5rem auto;
+  background-color: var(--special-color);
+  color: white;
+  font-size: 2rem;
+  display: block;
+}
+.contact-text label {
+  display: block;
+  padding: 2rem 0rem;
+  font-size: var(--text);
+  text-align: start;
+}
+
+.contact-text input {
+  width: 100%;
+  height: 5rem;
+  background-color: var(--background-color);
+}
+.contact-img {
+  flex: 1 1 30rem;
+}
+.contact-image {
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+/*footer*/
+footer {
+  background-color: var(--background-color);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  min-height: 10vh;
+}
+footer h4 {
+  flex: 2 1 40rem;
+  font-size: 2rem;
+  color: var(--special-color);
+  margin: 2rem;
+  padding: 1rem;
+}
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1 1 40rem;
+}
+footer li {
+  list-style: none;
+}
+
+/* VIEWPORT*/
+@media screen and (max-width: 846px) {
+  .logo {
+    text-align: center;
+    margin: 1rem;
+  }
+  .hero-intro {
+    text-align: start;
+    padding: auto;
+  }
+  footer h4 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  footer ul {
+    padding-bottom: 1.5rem;
+  }
+}
